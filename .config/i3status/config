@@ -6,7 +6,7 @@ general {
 order += "ipv6"
 order += "disk /"
 order += "run_watch DHCP"
-order += "run_watch VPN"
+order += "path_exists VPN"
 order += "wireless wlp5s0"
 order += "ethernet enp4s0"
 order += "battery 0"
@@ -32,10 +32,12 @@ run_watch DHCP {
         pidfile = "/var/run/dhclient*.pid"
 }
 
-run_watch VPN {
-        pidfile = "/run/vpnagentd.pid"
+path_exists VPN {
+        # path exists when a VPN tunnel is active
+        path = "/sys/class/net/cscotun0"
 }
 
+  
 time {
         format = "%a %b %d %l:%M %p"
 }
