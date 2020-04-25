@@ -177,14 +177,9 @@ bindsym $mod+t mode "pass-through"
 
 
 # make audio keys work. sink 1 is analog audio
-#set $sink 1
 bindsym XF86AudioRaiseVolume exec --no-startup-id volume-up
 bindsym XF86AudioLowerVolume exec --no-startup-id volume-down
 bindsym XF86AudioMute exec --no-startup-id volume-mute
-
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $sink +10%
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $sink -10%
-#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $sink toggle
 
 workspace_auto_back_and_forth yes
 
@@ -201,15 +196,11 @@ exec --no-startup-id xset dpms 300 0 0
 exec --no-startup-id /usr/lib/unity-settings-daemon/unity-settings-daemon
 exec --no-startup-id /usr/bin/nm-applet
 
-#exec --no-startup-id gnome-sound-applet
 exec --no-startup-id dropbox start
 exec --no-startup-id /usr/bin/update-notifier
 exec --no-startup-id /home/jwedgeco/bin/touchpad_settings.sh
 
 # set the desktop wallpaper
 exec --no-startup-id bash -c "sleep 3 ; feh --bg-fill ~/Pictures/IMG_1325.JPG"
-#exec --no-startup-id feh --bg-fill ~/Pictures/IMG_1325.JPG
 
-#exec --no-startup-id i3-msg 'workspace 1; exec firefox ; workspace 1'
 exec --no-startup-id i3-msg 'workspace 2; exec gnome-terminal  ; workspace 2'
-#exec --no-startup-id i3-msg 'workspace 3; exec thunderbird ; workspace 3'
