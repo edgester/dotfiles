@@ -119,8 +119,8 @@ bindsym $mod+Shift+parenleft move container to workspace 9
 bindsym $mod+Shift+parenright move container to workspace 10
 
 # assign programs to specific workspaces
-#assign [class="Firefox"] 1
-assign [class="browser"] 1
+assign [class="Firefox"] 1
+assign [class="Google-chrome"] 1
 assign [class="URxvt"] 2
 assign [class="gnome-terminal"] 2
 assign [class="Mail"] 3
