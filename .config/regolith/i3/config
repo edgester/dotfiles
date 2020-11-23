@@ -536,3 +536,5 @@ mode "Pass-through Mode" {
 }
 
 bindsym $mod+Shift+backslash mode "Pass-through Mode"
+
+focus_follows_mouse yes
