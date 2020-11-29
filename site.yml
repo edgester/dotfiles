@@ -1,0 +1,33 @@
+---
+- name: Set up ny Linux environment
+  hosts: localhost
+
+  tasks:
+    - name: Add the flathub flatpak repository remote to the user installation
+      community.general.flatpak_remote:
+        name: flathub
+        state: present
+        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+        method: user
+
+    - name: Install kiwix flatpak in my homedir
+      community.general.flatpak:
+        name: org.kiwix.desktop
+        method: user
+        state: present
+
+    - name: Add a symlink for kiwix
+      file:
+        src: ~/.local/share/flatpak/exports/bin/org.kiwix.desktop
+        path: ~/.local/bin/kiwix
+        state: link
+
+    - name: Install apt packages
+      apt:
+        name: "{{ item }}"
+        state: present
+      become: true
+      loop:
+        - golang
+        - jq
+        - rclone
