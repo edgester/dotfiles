@@ -2,6 +2,13 @@
 - name: Set up my Linux environment
   hosts: localhost
 
+  vars:
+    gh_cli_version: 1.4.0
+    gh_cli_url: "https://github.com/cli/cli/releases/download/v{{ gh_cli_version }}/gh_{{ gh_cli_version }}_linux_amd64.deb"
+    HOME: "{{ lookup('env', 'HOME') }}"
+    download_folder: "{{ HOME }}/Downloads"
+    gh_cli_download_file: "{{ download_folder }}/gh_{{ gh_cli_version }}_linux_amd64.deb"
+
   roles:
     - role: skype
       become: true
@@ -36,3 +43,15 @@
         - jq
         - rclone
         - thunderbird
+
+    - block:
+      - name: Download gh-cli
+        uri:
+          url: "{{ gh_cli_url }}"
+          creates: "{{ gh_cli_download_file }}"
+          dest: "{{ gh_cli_download_file }}"
+      - name: Install gh-cli
+        apt:
+          deb: "{{ gh_cli_download_file }}"
+        become: true
+      when: ansible_distribution == 'Ubuntu'
