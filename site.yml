@@ -33,6 +33,19 @@
         path: ~/.local/bin/kiwix
         state: link
 
+    - name: Install zeal flatpak
+      community.general.flatpak:
+        name: org.zealdocs.Zeal
+        method: system
+        state: present
+      become: true
+
+    - name: Add a symlink for zeal
+      file:
+        src: /var/lib/flatpak/app/org.zealdocs.Zeal/x86_64/stable/8aaaa499f0438d08c39868a9e4ca6d0031c6dda851a6a4d3c474a871dd12f6f3/export/bin/org.zealdocs.Zeal
+        path: ~/.local/bin/zeal
+        state: link
+
     - name: Install apt packages
       apt:
         name: "{{ item }}"
