@@ -2,6 +2,10 @@
 - name: Set up my Linux environment
   hosts: localhost
 
+  roles:
+    - role: skype
+      become: true
+
   tasks:
     - name: Add the flathub flatpak repository remote to the user installation
       community.general.flatpak_remote:
