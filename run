@@ -1,0 +1,6 @@
+#!/bin/bash
+# Ask or become password if not specified in environment
+if [ -z "${ANSIBLE_BECOME_PASS}" ]; then
+  OPTIONS="--ask-become-pass"
+fi
+ansible-playbook site.yml  ${OPTIONS} "$@"
