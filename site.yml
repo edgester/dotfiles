@@ -1,5 +1,5 @@
 ---
-- name: Set up ny Linux environment
+- name: Set up my Linux environment
   hosts: localhost
 
   tasks:
