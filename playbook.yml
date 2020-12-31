@@ -5,21 +5,8 @@
   become: no
   vars:
     vim_dir: "{{ ansible_env.HOME }}/.vim"
-    vimrc: "{{ ansible_env.HOME }}/.vimrc"
 
   tasks:
-    - name: Install required packages
-      package:
-        name:
-          - vim
-          - git
-          - fonts-powerline
-          - fzf
-        state: present
-      become: yes
-      tags:
-        - install_packages
-
     - name: Ensure .vim/{autoload,bundle} directory exists
       file:
         path: "{{ item }}"
@@ -56,10 +43,3 @@
         url: https://github.com/tpope/vim-fugitive
       - name: vim-floaterm
         url: https://github.com/voldikss/vim-floaterm
-
-    - name: Ensure .vimrc config in place
-      copy:
-        src: vimrc
-        dest: "{{ vimrc }}"
-        backup: yes
-        mode: 0640
