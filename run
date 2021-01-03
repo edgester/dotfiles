@@ -3,4 +3,7 @@
 # Run the pip-installed system ansible. This fixed the missing python-apt
 # problem
 export PATH="/usr/local/bin:${PATH}"
+
+BASEDIR=$(dirname $0)
+cd "${BASEDIR}"
 ansible-playbook --connection=local playbook.yml "$@"
