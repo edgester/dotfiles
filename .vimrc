@@ -4,6 +4,12 @@ filetype plugin indent on
 
 colo darkblue
 
+"""""""""""""""""
+" Sane Defaults "
+"""""""""""""""""
+set scrolloff=5
+set number relativenumber
+
 " Configuration vim Airline
 set laststatus=2
 
