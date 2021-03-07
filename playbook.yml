@@ -43,3 +43,5 @@
         url: https://github.com/tpope/vim-fugitive
       - name: vim-floaterm
         url: https://github.com/voldikss/vim-floaterm
+      - name: Vundle.vim
+        url: https://github.com/VundleVim/Vundle.vim.git
