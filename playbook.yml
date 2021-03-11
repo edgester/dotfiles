@@ -5,8 +5,22 @@
   become: no
   vars:
     vim_dir: "{{ ansible_env.HOME }}/.vim"
+    fzf_dir: "{{ ansible_env.HOME }}/.fzf"
 
   tasks:
+    - name: clone fzf git repo
+      git:
+        dest: "{{ fzf_dir }}"
+        repo: https://github.com/junegunn/fzf.git
+        clone: yes
+        depth: 1
+        update: yes
+
+    - name: Install fzf binary
+      command: "{{ fzf_dir }}/install --bin"
+      args:
+        creates: "{{ fzf_dir }}/bin/fzf"
+
     - name: Ensure .vim/{autoload,bundle} directory exists
       file:
         path: "{{ item }}"
