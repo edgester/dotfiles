@@ -28,6 +28,9 @@ colo darkblue
 set scrolloff=5
 set number relativenumber
 set foldlevel=99
+set shiftwidth=2
+set autoindent
+set smartindent
 
 " Configuration vim Airline
 set laststatus=2
