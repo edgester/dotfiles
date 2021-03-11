@@ -22,63 +22,96 @@ floating_modifier $mod
 bindsym $mod+Shift+plus exec xrandr --output eDP-1-1 --mode 1360x768
 bindsym $mod+Shift+minus exec xrandr --output eDP-1-1 --mode 1920x1080
 
-# start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+Q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
-bindsym $mod+c exec i3-dmenu-desktop
+###############################################################################
+# Launcher dialogs
+###############################################################################
 
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+## Launch // Application // <> Space ##
+bindsym $mod+space exec i3-dmenu-desktop
 
-# alternatively, you can use the cursor keys:
+## Launch // Command // <><Shift> Space ##
+bindsym $mod+Shift+space exec dmenu_run
+
+## Launch // Terminal // <> Enter ##
+bindsym $mod+Return exec i3-sensible-terminal
+
+## Launch // Browser // <><Shift> Enter ##
+bindsym $mod+Shift+Return exec gtk-launch $(xdg-settings get default-web-browser)
+
+###############################################################################
+# Window and Workspace Navigation
+###############################################################################
+
+## Navigate // Relative Window // <> ↑ ↓ ← → ##
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
-bindsym $mod+Shift+J move left
-bindsym $mod+Shift+K move down
-bindsym $mod+Shift+L move up
-bindsym $mod+Shift+colon move right
+## Navigate // Relative Window // <> k j h l ##
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
+## Navigate // Next Workspace // <> Tab ##
+bindsym $mod+Tab workspace next
+
+## Navigate // Next Workspace // <><Alt> → ##
+bindsym $mod+$alt+Right workspace next
+
+## Navigate // Previous Workspace // <><Shift> Tab ##
+bindsym $mod+Shift+Tab workspace prev
+
+## Navigate // Previous Workspace // <><Alt> ← ##
+bindsym $mod+$alt+Left workspace prev
+
+## Navigate // Scratchpad // <><Ctrl> a ##
+bindsym $mod+Ctrl+a scratchpad show
+
+###############################################################################
+# Window and Workspace Configuration
+###############################################################################
+
+## Modify // Window Position // <><Shift> ↑ ↓ ← → ##
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+h split h
+## Modify // Window Position // <><Shift> k j h l ##
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
-# split in vertical orientation
-bindsym $mod+v split v
+## Modify // Containing Workspace // <><Ctrl><Shift> ↑ ↓ ← → ##
+bindsym $mod+Ctrl+Shift+Left move workspace to output left
+bindsym $mod+Ctrl+Shift+Down move workspace to output down
+bindsym $mod+Ctrl+Shift+Up move workspace to output up
+bindsym $mod+Ctrl+Shift+Right move workspace to output right
 
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen
+## Modify // Next Window Orientation // <> Backspace ##
+bindsym $mod+BackSpace split toggle
 
-# change container layout (stacked, tabbed, default)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+Shift+d layout default
-bindsym $mod+x layout toggle
+## Modify // Window Fullscreen Toggle // <> f ##
+bindsym $mod+f fullscreen toggle
 
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+## Modify // Window Floating Toggle // <><Shift> f ##
+bindsym $mod+Shift+f floating toggle
 
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+## Modify // Move to Scratchpad // <><Ctrl> m ##
+bindsym $mod+Ctrl+m move to scratchpad
 
-# focus the parent container
-bindsym $mod+a focus parent
+## Modify // Tile/Float Focus Toggle // <><Shift> t ##
+bindsym $mod+Shift+t focus mode_toggle
+
+## Modify // Window Layout Mode // <> t ##
+bindsym $mod+t layout toggle tabbed splith splitv
 
 # focus the child container
 #bindcode $mod+d focus child
@@ -118,6 +151,7 @@ bindsym $mod+Shift+asterisk move container to workspace 8
 bindsym $mod+Shift+parenleft move container to workspace 9
 bindsym $mod+Shift+parenright move container to workspace 10
 
+###############################################################################
 # assign programs to specific workspaces
 assign [class="Firefox"] 1
 assign [class="Google-chrome"] 1
@@ -134,48 +168,56 @@ bindsym $mod+Shift+R restart
 bindsym $mod+Shift+E exit
 bindsym XF86PowerOff exit
 
-#bindsym $mod+Shift+E exec gnome-session-quit
-#bindsym $mod+Shift+\ exit
+###############################################################################
+# Window Resize and Gaps
+###############################################################################
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
+## Resize // Enter Resize Mode // <> r ##
+mode "Resize Mode" {
         # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        ## Resize // Resize Window // ↑ ↓ ← → ##
+        bindsym Left resize shrink width 6 px or 6 ppt
+        bindsym Down resize grow height 6 px or 6 ppt
+        bindsym Up resize shrink height 6 px or 6 ppt
+        bindsym Right resize grow width 6 px or 6 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym 113 resize shrink width 10 px or 10 ppt
-        bindsym 116 resize grow height 10 px or 10 ppt
-        bindsym 111 resize shrink height 10 px or 10 ppt
-        bindsym 114 resize grow width 10 px or 10 ppt
+        bindsym Shift+Left resize shrink width 12 px or 12 ppt
+        bindsym Shift+Down resize grow height 12 px or 12 ppt
+        bindsym Shift+Up resize shrink height 12 px or 12 ppt
+        bindsym Shift+Right resize grow width 12 px or 12 ppt
 
-        # back to normal: Enter or Escape
+        ## Resize // Resize Window // k j h l ##
+        bindsym h resize shrink width 6 px or 6 ppt
+        bindsym k resize grow height 6 px or 6 ppt
+        bindsym j resize shrink height 6 px or 6 ppt
+        bindsym l resize grow width 6 px or 6 ppt
+
+        bindsym Shift+h resize shrink width 12 px or 12 ppt
+        bindsym Shift+k resize grow height 12 px or 12 ppt
+        bindsym Shift+j resize shrink height 12 px or 12 ppt
+        bindsym Shift+l resize grow width 12 px or 12 ppt
+
+        ## Resize // Exit Resize Mode // Escape or Enter ##
         bindsym Return mode "default"
         bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
 }
+bindsym $mod+r mode "Resize Mode"
 
-bindsym $mod+r mode "resize"
+################################################################################
+# Pass-through mode
+################################################################################
 
-bindsym $mod+m move scratchpad
-bindsym $mod+o scratchpad show
-
-### define passthrough more for usine i3 in a remote session
-mode "pass-through" {
-    bindsym $mod+t mode "default"
+### define Pass-through Mode for using i3 in a remote session
+mode "Pass-through Mode" {
+    bindsym $mod+Shift+backslash mode "default"
     bindsym XF86AudioRaiseVolume exec --no-startup-id volume-up
     bindsym XF86AudioLowerVolume exec --no-startup-id volume-down
     bindsym XF86AudioMute exec --no-startup-id volume-mute
 }
 
-bindsym $mod+t mode "pass-through"
-
+bindsym $mod+Shift+backslash mode "Pass-through Mode"
 
 # make audio keys work. sink 1 is analog audio
 bindsym XF86AudioRaiseVolume exec --no-startup-id volume-up
