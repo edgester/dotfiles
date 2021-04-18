@@ -1,0 +1,10 @@
+dotfiles_repo: "https://github.com/edgester/dotfiles.git"
+dotfiles_repo_version: main
+dotfiles_repo_accept_hostkey: true
+dotfiles_repo_local_destination: "~/dotfiles"
+dotfiles_home: "~"
+dotfiles_files:
+  - .bashrc.d
+  - .gitignore
+  - .inputrc
+  - .vimrc
