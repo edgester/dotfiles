@@ -26,11 +26,14 @@ syntax on
 " Sane Defaults "
 """""""""""""""""
 set autoindent
+set expandtab
 set foldlevel=99
 set number relativenumber
 set scrolloff=5
 set shiftwidth=2
 set smartindent
+set softtabstop=2
+set tabstop=2
 
 " Configure vim Airline
 " Always show a status line
