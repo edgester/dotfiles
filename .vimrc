@@ -1,7 +1,6 @@
 " Run :PlugInstall to install plugins
 
 set nocompatible              " be iMproved, required
-filetype off                  " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
