@@ -34,9 +34,13 @@ set autoindent
 set smartindent
 
 " Configure vim Airline
+" Always show a status line
 set laststatus=2
 
+" Display all buffers when only one tab is open
 let g:airline#extensions#tabline#enabled=1
+
+" Use powerline fonts in the statusline
 let g:airline_powerline_fonts=1
 
 " Configure Vim.FZF
