@@ -9,7 +9,11 @@ filetype plugin indent on    " required
 call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
+
+" Make a nice statusbar
 Plug 'vim-airline/vim-airline'
+
+" ReStructured Text support
 Plug 'Rykka/riv.vim'
 
 " Plugin outside ~/.vim/plugged with post-update hook
