@@ -1,26 +1,27 @@
-"Vundle Configuration
+" Run :PlugInstall to install plugins
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-" Keep Plugin commands between vundle#begin/end.
-Plugin 'vim-airline/vim-airline'
-Plugin 'Rykka/riv.vim'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 
-execute pathogen#infect()
+" Plugins stored in ~/.vim/plugged
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+Plug 'vim-airline/vim-airline'
+Plug 'Rykka/riv.vim'
+
+" Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Initialize plugin system
+call plug#end()
+
 syntax on
 
-colo darkblue
+"colo darkblue
 
 """""""""""""""""
 " Sane Defaults "
@@ -32,21 +33,13 @@ set shiftwidth=2
 set autoindent
 set smartindent
 
-" Configuration vim Airline
+" Configure vim Airline
 set laststatus=2
 
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
 
-" Configuration NERDTree
-map <F5> :NERDTreeToggle<CR>
-
-" Configuration floaterm
-let g:floaterm_keymap_toggle = '<F12>'
-let g:floaterm_width = 0.9
-let g:floaterm_height = 0.9
-
-" Configuration Vim.FZF
+" Configure Vim.FZF
 let g:fzf_preview_window = 'right:50%'
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  }  }
 
