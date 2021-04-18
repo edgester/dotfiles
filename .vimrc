@@ -25,11 +25,11 @@ syntax on
 """""""""""""""""
 " Sane Defaults "
 """""""""""""""""
-set scrolloff=5
-set number relativenumber
-set foldlevel=99
-set shiftwidth=2
 set autoindent
+set foldlevel=99
+set number relativenumber
+set scrolloff=5
+set shiftwidth=2
 set smartindent
 
 " Configure vim Airline
