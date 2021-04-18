@@ -14,7 +14,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 
 " ReStructured Text support
-Plug 'Rykka/riv.vim'
+Plug 'gu-fan/riv.vim'
 
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
