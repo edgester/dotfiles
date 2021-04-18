@@ -65,3 +65,9 @@ autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd FileType yml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 autocmd FileType rst set maxmempattern=2000
+
+" enable spellcheck for some file types
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
+autocmd BufRead,BufNewFile *.rst setlocal spell spelllang=en_us
+autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us
+autocmd FileType gitcommit setlocal spell spelllang=en_us
