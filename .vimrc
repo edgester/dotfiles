@@ -19,6 +19,9 @@ Plug 'Rykka/riv.vim'
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
+" Personal wiki and note-taking
+Plug 'vimwiki/vimwiki'
+
 " Initialize plugin system
 call plug#end()
 
@@ -52,6 +55,10 @@ let g:airline_powerline_fonts=1
 " Configure Vim.FZF
 let g:fzf_preview_window = 'right:50%'
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  }  }
+
+" Configure vimwiki to use markdown
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " Set 2 space indent for YAML files
 autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
