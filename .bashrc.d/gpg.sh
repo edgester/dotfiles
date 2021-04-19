@@ -1,3 +1,7 @@
 #!/bin/bash
 export GPG_TTY=$(tty)
-gpgconf --launch gpg-agent
+. /etc/os-release
+export VERSION_ID
+if [ "${VERSION_ID}" != "7.9" ]; then
+  gpgconf --launch gpg-agent
+fi
