@@ -1,3 +1,4 @@
+---
 dotfiles_repo: "https://github.com/edgester/dotfiles.git"
 dotfiles_repo_version: main
 dotfiles_repo_accept_hostkey: true
