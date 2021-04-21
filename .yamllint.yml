@@ -1,0 +1,10 @@
+---
+extends: default
+
+ignore: |
+  collections/
+  roles/
+
+rules:
+  line-length: disable
+  truthy: disable
