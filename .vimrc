@@ -57,6 +57,7 @@ let g:airline_powerline_fonts=1
 let g:fzf_preview_window = 'right:50%'
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  }  }
 
+
 " Configure vimwiki
 let wiki_1 = {}
 let wiki_1.path = '~/vimwiki/personal/'
@@ -72,6 +73,23 @@ let wiki_2.ext= 'md'
 let wiki_2.index = 'index'
 let wiki_2.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'markdown':'md'}
 let g:vimwiki_list = [wiki_1, wiki_2]
+
+" vimwiki w/calendar
+function! ToggleCalendar()
+  execute ":Calendar"
+  if exists("g:calendar_open")
+    if g:calendar_open == 1
+      execute "q"
+      unlet g:calendar_open
+    else
+      g:calendar_open = 1
+    end
+  else
+    let g:calendar_open = 1
+  end
+endfunction
+:autocmd FileType vimwiki map c :call ToggleCalendar()
+
 
 " Set 2 space indent for YAML files
 autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
