@@ -20,6 +20,7 @@ Plug 'gu-fan/riv.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Personal wiki and note-taking
+Plug 'mattn/calendar-vim'
 Plug 'vimwiki/vimwiki'
 
 " Initialize plugin system
@@ -56,9 +57,21 @@ let g:airline_powerline_fonts=1
 let g:fzf_preview_window = 'right:50%'
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  }  }
 
-" Configure vimwiki to use markdown
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
+" Configure vimwiki
+let wiki_1 = {}
+let wiki_1.path = '~/vimwiki/personal/'
+let wiki_1.html_template = '~/public_html/template.tpl'
+let wiki_1.syntax= 'markdown'
+let wiki_1.ext= 'md'
+let wiki_1.index = 'index'
+let wiki_1.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'markdown':'md'}
+let wiki_2 = {}
+let wiki_2.path = '~/vimwiki/tech/'
+let wiki_2.syntax= 'markdown'
+let wiki_2.ext= 'md'
+let wiki_2.index = 'index'
+let wiki_2.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'markdown':'md'}
+let g:vimwiki_list = [wiki_1, wiki_2]
 
 " Set 2 space indent for YAML files
 autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
