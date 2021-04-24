@@ -23,12 +23,15 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mattn/calendar-vim'
 Plug 'vimwiki/vimwiki'
 
+" nord-vim colorscheme
+Plug 'arcticicestudio/nord-vim'
+
 " Initialize plugin system
 call plug#end()
 
 syntax on
 
-"colo darkblue
+colorscheme nord
 
 """""""""""""""""
 " Sane Defaults "
