@@ -11,7 +11,8 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 " Make a nice statusbar
-"Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " ReStructured Text support
 Plug 'gu-fan/riv.vim'
@@ -24,7 +25,7 @@ Plug 'mattn/calendar-vim'
 Plug 'vimwiki/vimwiki'
 
 " nord-vim colorscheme
-Plug 'arcticicestudio/nord-vim'
+Plug 'arcticicestudio/nord-vim', { 'branch': 'master' }
 
 " Initialize plugin system
 call plug#end()
@@ -48,13 +49,17 @@ set tabstop=2
 
 " Configure vim Airline
 " Always show a status line
-"set laststatus=2
+set laststatus=2
+
+let g:nord_statusline_uniform = 1
+
+let g:airline_theme='cool'
 
 " Display all buffers when only one tab is open
-"let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#enabled=1
 
 " Use powerline fonts in the statusline
-"let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=1
 
 " Configure Vim.FZF
 let g:fzf_preview_window = 'right:50%'
