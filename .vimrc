@@ -123,3 +123,7 @@ autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us complete+=kspell
 autocmd BufRead,BufNewFile *.rst setlocal spell spelllang=en_us complete+=kspell
 autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us complete+=kspell
 autocmd FileType gitcommit setlocal spell spelllang=en_us
+
+" netrw (folder viewer prefs)
+let g:netrw_browse_split = 2
+let g:netrw_winsize = 25
