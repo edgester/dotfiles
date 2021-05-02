@@ -35,7 +35,11 @@ call plug#end()
 
 syntax on
 
+" configure nord colorscheme
 colorscheme nord
+
+" Override Visual mode colors
+hi Visual term=reverse cterm=reverse guibg=Grey
 
 """""""""""""""""
 " Sane Defaults "
