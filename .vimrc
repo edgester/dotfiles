@@ -24,6 +24,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mattn/calendar-vim'
 Plug 'vimwiki/vimwiki'
 
+" ctags support
+Plug 'preservim/tagbar'
+
 " nord-vim colorscheme
 Plug 'arcticicestudio/nord-vim', { 'branch': 'master' }
 
@@ -97,6 +100,16 @@ function! ToggleCalendar()
   end
 endfunction
 :autocmd FileType vimwiki map c :call ToggleCalendar()
+
+" Configure tagbar
+let g:tagbar_type_ansible = {
+	\ 'ctagstype' : 'ansible',
+	\ 'kinds' : [
+		\ 't:tasks'
+	\ ],
+	\ 'sort' : 0
+\ }
+nmap <F8> :TagbarToggle<CR>
 
 
 " Set 2 space indent for YAML files
