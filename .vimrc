@@ -87,7 +87,13 @@ let wiki_2.syntax= 'markdown'
 let wiki_2.ext= 'md'
 let wiki_2.index = 'index'
 let wiki_2.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'markdown':'md'}
-let g:vimwiki_list = [wiki_1, wiki_2]
+let wiki_3 = {}
+let wiki_3.path = '~/vimwiki/work/'
+let wiki_3.syntax= 'markdown'
+let wiki_3.ext= 'md'
+let wiki_3.index = 'index'
+let wiki_3.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'markdown':'md'}
+let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
 
 " vimwiki w/calendar
 function! ToggleCalendar()
