@@ -11,3 +11,6 @@
 tmp/**/* 
 roles/*
 !.gitkeep
+
+# Ignore NFS temp cache files
+.nfs*
