@@ -24,6 +24,11 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mattn/calendar-vim'
 Plug 'vimwiki/vimwiki'
 
+" snippet engine
+Plug 'SirVer/ultisnips'
+" Snippets for Ultisnips
+Plug 'honza/vim-snippets'
+
 " ctags support
 Plug 'preservim/tagbar'
 
@@ -137,3 +142,12 @@ autocmd FileType gitcommit setlocal spell spelllang=en_us
 " netrw (folder viewer prefs)
 let g:netrw_browse_split = 2
 let g:netrw_winsize = 25
+
+" Ultisnips config. Avoid Tab if using Valloric/YouCompleteMe or
+" nvim-lua/completion-nvim
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
