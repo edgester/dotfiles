@@ -100,6 +100,8 @@ let wiki_3.ext= 'md'
 let wiki_3.index = 'index'
 let wiki_3.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'markdown':'md'}
 let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
+" Disable Tab in tables to not conflict with UltiSnips
+let g:vimwiki_table_mappings = 0
 
 " vimwiki w/calendar
 function! ToggleCalendar()
@@ -145,10 +147,10 @@ let g:netrw_browse_split = 2
 let g:netrw_winsize = 25
 
 " Ultisnips config. Avoid Tab if using Valloric/YouCompleteMe or
-" nvim-lua/completion-nvim
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" nvim-lua/completion-nvim or vimwiki
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-j>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
