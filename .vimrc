@@ -73,9 +73,9 @@ let g:airline#extensions#tabline#enabled=1
 " Use powerline fonts in the statusline
 let g:airline_powerline_fonts=1
 
-" Configure Vim.FZF
-let g:fzf_preview_window = 'right:50%'
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  }  }
+" Configure Vim.FZF. Can't use the cool stuff until VIM 8.2
+"let g:fzf_preview_window = 'right:50%'
+"let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  }  }
 
 
 " Configure vimwiki
