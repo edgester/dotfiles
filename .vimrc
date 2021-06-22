@@ -17,8 +17,9 @@ Plug 'vim-airline/vim-airline-themes'
 " ReStructured Text support
 Plug 'gu-fan/riv.vim'
 
-" Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" FZF
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Personal wiki and note-taking
 Plug 'mattn/calendar-vim'
