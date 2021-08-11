@@ -102,6 +102,7 @@ let wiki_3.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'markdown':'md'}
 let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
 " Disable Tab in tables to not conflict with UltiSnips
 let g:vimwiki_table_mappings = 0
+let g:vimwiki_markdown_link_ext = 1
 
 " vimwiki w/calendar
 function! ToggleCalendar()
