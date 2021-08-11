@@ -107,6 +107,15 @@ let g:vimwiki_markdown_link_ext = 1
 " Set vimwiki tabstops
 au FileType vimwiki setlocal shiftwidth=2 softtabstop=2 tabstop=2 noexpandtab
 
+" Run :Diary to jump to the Diary
+command! Diary VimwikiDiaryIndex
+
+augroup vimwikigroup
+    autocmd!
+    " automatically update links on read diary
+    autocmd BufRead,BufNewFile diary.md VimwikiDiaryGenerateLinks
+augroup end
+
 " vimwiki w/calendar
 function! ToggleCalendar()
   execute ":Calendar"
