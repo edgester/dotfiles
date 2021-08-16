@@ -105,7 +105,7 @@ let g:vimwiki_table_mappings = 0
 let g:vimwiki_markdown_link_ext = 1
 
 " Set vimwiki tabstops
-au FileType vimwiki setlocal shiftwidth=2 softtabstop=2 tabstop=2 noexpandtab
+au FileType vimwiki setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 " Run :Diary to jump to the Diary
 command! Diary VimwikiDiaryIndex
