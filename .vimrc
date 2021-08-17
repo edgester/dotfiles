@@ -36,6 +36,9 @@ Plug 'preservim/tagbar'
 " nord-vim colorscheme
 Plug 'arcticicestudio/nord-vim', { 'branch': 'master' }
 
+" Git support
+Plug 'tpope/vim-fugitive'
+
 " Initialize plugin system
 call plug#end()
 
