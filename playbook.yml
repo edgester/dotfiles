@@ -43,6 +43,7 @@
 
     - name: Install github cli
       include_tasks: gh_cli.yml
+      tags: github
 
     - name: source bashrc.d in bashrc
       lineinfile:

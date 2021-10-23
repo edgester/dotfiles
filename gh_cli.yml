@@ -1,24 +1,32 @@
 ---
-- name: mkdir ~/bin
+- name: "mkdir ~/bin"
   file:
     path: ~/bin
     state: directory
     mode: 0700
+  tags:
+    - github
 
 - name: Check if ~/bin/gh exists
   stat:
     path: ~/bin/gh
   register: bin_gh
+  tags:
+    - github
 
 - name: print gh stat
   debug:
     var: bin_gh
+  tags:
+    - github
 
 - name: Copy down the github cli binary
   unarchive:
-    src: https://github.com/cli/cli/releases/download/v1.6.1/gh_1.6.1_linux_amd64.tar.gz
+    src: https://github.com/cli/cli/releases/download/v2.1.0/gh_2.1.0_linux_amd64.tar.gz
     dest: ~/
     remote_src: yes
     extra_opts:
       - --strip-components=1
-      - gh_1.6.1_linux_amd64/bin/gh
+      - gh_2.1.0_linux_amd64/bin/gh
+  tags:
+    - github
