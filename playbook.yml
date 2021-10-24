@@ -49,3 +49,15 @@
       lineinfile:
         path: ~/.bashrc
         line: "[ -f ~/.bashrc.d/bashrc.init ] && source ~/.bashrc.d/bashrc.init"
+
+    - name: Create regolith config folder
+      ansible.builtin.file:
+        path: "{{ ansible_env.HOME }}/.config/regolith"
+        state: directory
+        mode: '0700'
+
+    - name: Link regolith config to dotfiles git repo
+      ansible.builtin.file:
+        src: "{{ dotfiles_repo_local_destination }}/.config/regolith/i3"
+        dest: "{{ dotfiles_home }}/.config/regolith/i3"
+        state: link
