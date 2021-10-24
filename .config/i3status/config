@@ -37,7 +37,7 @@ path_exists VPN {
         path = "/sys/class/net/cscotun0"
 }
 
-  
+
 time {
         format = "%a %b %d %l:%M %p"
 }
