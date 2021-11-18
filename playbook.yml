@@ -19,7 +19,7 @@
         clone: yes
         depth: 1
         update: yes
-        version: main
+        version: master
 
     - name: Install fzf binary
       command: "{{ fzf_dir }}/install --bin"
