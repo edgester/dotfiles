@@ -371,6 +371,16 @@ mode "Resize Mode" {
 }
 bindsym $mod+r mode "Resize Mode"
 
+################################################################################
+# Pass-through mode
+################################################################################
+
+### define Pass-through Mode for using i3 in a remote session
+mode "Passthru Mode" {
+    bindsym $mod+bar mode "default"
+}
+bindsym $mod+bar mode "Passthru Mode"
+
 ###############################################################################
 # i3 Appearance and Behavior
 ###############################################################################
@@ -525,16 +535,5 @@ set_from_resource $i3-wm.program.2 i3-wm.program.2 :
 exec --no-startup-id $i3-wm.program.2
 set_from_resource $i3-wm.program.3 i3-wm.program.3 :
 exec --no-startup-id $i3-wm.program.3
-
-################################################################################
-# Pass-through mode
-################################################################################
-
-### define Pass-through Mode for using i3 in a remote session
-mode "Pass-through Mode" {
-    bindsym $mod+Shift+backslash mode "default"
-}
-
-bindsym $mod+Shift+backslash mode "Pass-through Mode"
 
 focus_follows_mouse yes
