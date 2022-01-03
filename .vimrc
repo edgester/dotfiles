@@ -59,6 +59,7 @@ hi Visual term=reverse cterm=reverse guibg=Grey
 set autoindent
 set expandtab
 set foldlevel=99
+set hlsearch
 set number relativenumber
 set scrolloff=5
 set shiftwidth=4
