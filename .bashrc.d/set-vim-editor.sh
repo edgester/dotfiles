@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ -x /usr/bin/vimx ]; then
+if command -v vimx &> /dev/null; then
     export EDITOR=vimx
     alias vim=vimx
     alias vi=vimx
