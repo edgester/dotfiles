@@ -10,6 +10,9 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 
+" Use sensible defaults
+Plug 'tpope/vim-sensible'
+
 " Make a nice statusbar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
