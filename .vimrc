@@ -110,6 +110,7 @@ let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
 " Disable Tab in tables to not conflict with UltiSnips
 let g:vimwiki_table_mappings = 0
 let g:vimwiki_markdown_link_ext = 1
+let g:vimwiki_folding = 'list'
 
 " Set vimwiki tabstops
 au FileType vimwiki setlocal shiftwidth=2 softtabstop=2 tabstop=2
