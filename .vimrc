@@ -138,7 +138,7 @@ function! ToggleCalendar()
     let g:calendar_open = 1
   end
 endfunction
-:autocmd FileType vimwiki map c :call ToggleCalendar()
+:autocmd FileType vimwiki map <F2> :call ToggleCalendar()<CR>
 
 " Configure tagbar
 let g:tagbar_type_ansible = {
