@@ -106,7 +106,13 @@ let wiki_3.syntax= 'markdown'
 let wiki_3.ext= 'md'
 let wiki_3.index = 'index'
 let wiki_3.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'markdown':'md'}
-let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
+let wiki_4 = {}
+let wiki_4.path = '~/vimwiki/private/'
+let wiki_4.syntax= 'markdown'
+let wiki_4.ext= 'md'
+let wiki_4.index = 'index'
+let wiki_4.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'markdown':'md'}
+let g:vimwiki_list = [wiki_1, wiki_2, wiki_3, wiki_4]
 " Disable Tab in tables to not conflict with UltiSnips
 let g:vimwiki_table_mappings = 0
 let g:vimwiki_markdown_link_ext = 1
