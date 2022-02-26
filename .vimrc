@@ -180,3 +180,6 @@ let g:netrw_winsize = 25
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" Paste visual selection to ix.io using credentials.
+vnoremap <Leader>pp :w !curl -n -F "f:1=<-" ix.io<CR>
