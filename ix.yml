@@ -1,0 +1,34 @@
+---
+- name: Install ix
+  hosts: localhost
+  tasks:
+
+  - name: "mkdir ~/bin"
+    file:
+      path: ~/bin
+      state: directory
+      mode: 0700
+    tags:
+      - ix
+
+  - name: Check if ~/bin/ix exists
+    stat:
+      path: ~/bin/ix
+    register: bin_ix
+    tags:
+      - ix
+
+  - name: print ix stat
+    debug:
+      var: bin_ix
+    tags:
+      - ix
+
+  - name: Copy down the ix client
+    get_url:
+      url: http://ix.io/client
+      dest: ~/bin/ix
+      checksum: 'sha256:a7f8ff373eedccb255ec7814c15b22c0dd56c42c783e8afe1f24601534d18275'
+      mode: '0700'
+    tags:
+      - ix
