@@ -1,0 +1,11 @@
+#!/bin/bash
+# wd - watch directory
+#
+# Run the specified commands if files in the current folder are modified.
+# Examples:
+#   wd echo 'file=$filename event=$event'
+#   wd date
+inotifywait -q -m -r -e close_write --exclude='\.swpx?$' . |
+while read -r filename event; do
+  eval "$@"
+done
