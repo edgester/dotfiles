@@ -148,6 +148,9 @@ function! ToggleCalendar()
 endfunction
 :autocmd FileType vimwiki map <F2> :call ToggleCalendar()<CR>
 
+" vim-zettel config
+let g:zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "
+
 " Configure tagbar
 let g:tagbar_type_ansible = {
 	\ 'ctagstype' : 'ansible',
