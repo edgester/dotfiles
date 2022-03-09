@@ -28,6 +28,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'mattn/calendar-vim'
 Plug 'vimwiki/vimwiki'
 
+" Vim-zettel - Use the vim801 fix branch until it is merged
+Plug 'bwildenhain/vim-zettel', { 'branch': 'vim801' }
+
 " snippet engine
 Plug 'SirVer/ultisnips'
 " Snippets for Ultisnips
