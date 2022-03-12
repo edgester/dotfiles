@@ -13,7 +13,7 @@
 
   tasks:
     - name: clone fzf git repo
-      git:
+      ansible.builtin.git:
         dest: "{{ fzf_dir }}"
         repo: https://github.com/junegunn/fzf.git
         clone: yes
@@ -22,12 +22,12 @@
         version: master
 
     - name: Install fzf binary
-      command: "{{ fzf_dir }}/install --bin"
+      ansible.builtin.command: "{{ fzf_dir }}/install --bin"
       args:
         creates: "{{ fzf_dir }}/bin/fzf"
 
     - name: Ensure .vim/{autoload,bundle} directory exists
-      file:
+      ansible.builtin.file:
         path: "{{ item }}"
         state: directory
         recurse: no
@@ -38,16 +38,17 @@
         - "{{ vim_dir }}/bundle"
 
     - name: Install vim-plug
-      get_url:
+      ansible.builtin.get_url:
         dest: "{{ vim_dir }}/autoload/plug.vim"
         url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        mode: 0600
 
     - name: Install github cli
       include_tasks: gh_cli.yml
       tags: github
 
     - name: source bashrc.d in bashrc
-      lineinfile:
+      ansible.builtin.lineinfile:
         path: ~/.bashrc
         line: "[ -f ~/.bashrc.d/bashrc.init ] && source ~/.bashrc.d/bashrc.init"
 

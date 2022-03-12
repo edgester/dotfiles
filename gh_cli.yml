@@ -1,6 +1,6 @@
 ---
 - name: "mkdir ~/bin"
-  file:
+  ansible.builtin.file:
     path: ~/bin
     state: directory
     mode: 0700
@@ -8,20 +8,20 @@
     - github
 
 - name: Check if ~/bin/gh exists
-  stat:
+  ansible.builtin.stat:
     path: ~/bin/gh
   register: bin_gh
   tags:
     - github
 
 - name: print gh stat
-  debug:
+  ansible.builtin.debug:
     var: bin_gh
   tags:
     - github
 
 - name: Copy down the github cli binary
-  unarchive:
+  ansible.builtin.unarchive:
     src: https://github.com/cli/cli/releases/download/v2.1.0/gh_2.1.0_linux_amd64.tar.gz
     dest: ~/
     remote_src: yes
