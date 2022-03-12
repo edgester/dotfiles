@@ -64,3 +64,37 @@
         src: "{{ dotfiles_repo_local_destination }}/.config/regolith/i3"
         dest: "{{ dotfiles_home }}/.config/regolith/i3"
         state: link
+
+    - name: Set git config
+      community.general.git_config:
+        name: "{{ item.name }}"
+        scope: global
+        value: "{{ item.value }}"
+      loop:
+        - name: push.default
+          value: matching
+        - name: gc.auto
+          value: 1
+        - name: core.exludesfile
+          value: "{{ ansible_env.HOME }}/.gitignore_global"
+        - name: gpg.program
+          value: gpg
+        - name: commit.gpgSign
+          value: "true"
+        - name: tag.gpgSign
+          value: "true"
+
+    - name: Add git aliases
+      community.general.git_config:
+        name: "alias.{{ item.name }}"
+        scope: global
+        value: "{{ item.value }}"
+      loop:
+        - name: br
+          value: branch
+        - name: co
+          value: checkout
+        - name: st
+          value: status
+        - name: tree
+          value: log --graph --oneline --all
