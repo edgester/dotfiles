@@ -8,10 +8,11 @@
     vim_dir: "{{ ansible_env.HOME }}/.vim"
     fzf_dir: "{{ ansible_env.HOME }}/.fzf"
 
-  roles:
-    - geerlingguy.dotfiles
-
   tasks:
+    - name: apply dotfiles role
+      include_role:
+        name: geerlingguy.dotfiles
+
     - name: clone fzf git repo
       ansible.builtin.git:
         dest: "{{ fzf_dir }}"
