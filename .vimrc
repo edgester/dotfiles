@@ -48,6 +48,10 @@ Plug 'arcticicestudio/nord-vim'
 " Git support
 Plug 'tpope/vim-fugitive'
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'yaegassy/coc-ansible', {'do': 'yarn install --frozen-lockfile'}
+Plug 'pearofducks/ansible-vim'
+
 " Show register contents
 Plug 'junegunn/vim-peekaboo'
 
