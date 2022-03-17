@@ -27,6 +27,7 @@ if [ "${PLATFORM_ID}" == "platform:el8" ]; then
             -v ~/.vagrant.d/data:/vagrant/data \
             -v ~/.vagrant.d/tmp:/vagrant/tmp \
             -v $(realpath "${PWD}"):${PWD} \
+            -v "${HOME}:${HOME}" \
             -w $(realpath "${PWD}") \
             --network host \
             --entrypoint /bin/bash \
