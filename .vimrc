@@ -189,3 +189,6 @@ let g:UltiSnipsEditSplit="vertical"
 
 " Paste visual selection to ix.io using credentials.
 vnoremap <Leader>pp :w !curl -n -F "f:1=<-" ix.io<CR>
+
+" :Todo command lists TODO and FIXME entries
+command Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
