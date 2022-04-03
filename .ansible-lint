@@ -1,4 +1,8 @@
 ---
+skip_list:
+  - fqcn-builtins  # Use FQCN for builtin actions
+  - role-name      # Role name {0} does not match ``^[a-z][a-z0-9_]+$`` pattern
+
 exclude_paths:
   - .cache/  # implicit unless exclude_paths is defined in config
   - .github/
