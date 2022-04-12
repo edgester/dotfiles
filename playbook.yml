@@ -27,7 +27,7 @@
       args:
         creates: "{{ fzf_dir }}/bin/fzf"
 
-    - name: Ensure .vim/{autoload,bundle} directory exists
+    - name: Ensure .vim folders exist
       ansible.builtin.file:
         path: "{{ item }}"
         state: directory
@@ -37,6 +37,7 @@
         - "{{ vim_dir }}"
         - "{{ vim_dir }}/autoload"
         - "{{ vim_dir }}/bundle"
+        - "{{ vim_dir }}/undodir"
 
     - name: Install vim-plug
       ansible.builtin.get_url:
