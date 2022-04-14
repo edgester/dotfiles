@@ -32,6 +32,8 @@ if [ "${PLATFORM_ID}" == "platform:el8" ]; then
             --network host \
             --entrypoint /bin/bash \
             --security-opt label=disable \
+            --expose=8000-8900 \
+            ${PODMAN_OPTS} \
             localhost/vagrant-extras \
             vagrant $@
     }
