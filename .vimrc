@@ -57,7 +57,7 @@ colorscheme nord
 hi Visual term=reverse cterm=reverse guibg=Grey
 
 """""""""""""""""
-" Sane Defaults "
+" Main settings
 """""""""""""""""
 set autoindent
 set expandtab
@@ -69,6 +69,7 @@ set shiftwidth=4
 set smartindent
 set softtabstop=4
 set tabstop=4
+set autochdir
 
 " Configure vim Airline
 " Always show a status line
