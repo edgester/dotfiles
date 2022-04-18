@@ -74,6 +74,9 @@ set tabstop=4
 " Always show a status line
 set laststatus=2
 
+" path for :find
+set path+=~/vimwiki/**,~/projects/**
+
 let g:nord_statusline_uniform = 1
 
 let g:airline_theme='cool'
