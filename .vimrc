@@ -70,6 +70,7 @@ set smartindent
 set softtabstop=4
 set tabstop=4
 set autochdir
+set nrformats+=alpha
 
 " Configure vim Airline
 " Always show a status line
