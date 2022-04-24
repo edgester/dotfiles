@@ -72,6 +72,9 @@ set tabstop=4
 set autochdir
 set nrformats+=alpha
 
+" enable man plugin
+:runtime! ftplugin/man.vim
+
 " Configure vim Airline
 " Always show a status line
 set laststatus=2
