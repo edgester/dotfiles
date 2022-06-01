@@ -13,6 +13,9 @@ call plug#begin('~/.vim/plugged')
 " Use sensible defaults
 Plug 'tpope/vim-sensible'
 
+" Helpful key bindings
+Plug 'tpope/vim-unimpaired'
+
 " Make a nice statusbar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
