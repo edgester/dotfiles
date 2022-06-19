@@ -198,8 +198,19 @@ let g:netrw_winsize = 25
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+
+"""""""""""""""" Key mappings """""""""""""""""
 " Paste visual selection to ix.io using credentials.
 vnoremap <Leader>pp :w !curl -n -F "f:1=<-" ix.io<CR>
+
+" moving lines (from https://vimtricks.com/p/vimtrick-moving-lines/ )
+nnoremap <c-j> :m .+1<CR>==
+nnoremap <c-k> :m .-2<CR>==
+inoremap <c-j> <Esc>:m .+1<CR>==gi
+inoremap <c-k> <Esc>:m .-2<CR>==gi
+vnoremap <c-j> :m '>+1<CR>gv=gv
+vnoremap <c-k> :m '<-2<CR>gv=gv
+
 
 " :Todo command lists TODO and FIXME entries
 command Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
