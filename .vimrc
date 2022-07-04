@@ -137,6 +137,8 @@ let g:vimwiki_list = [wiki_1, wiki_2, wiki_3, wiki_4]
 let g:vimwiki_table_mappings = 0
 let g:vimwiki_markdown_link_ext = 1
 
+let g:markdown_fenced_languages = ['bash', 'html', 'python', 'ruby', 'vim']
+
 " Set vimwiki tabstops
 au FileType vimwiki setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
