@@ -7,6 +7,7 @@
   vars:
     vim_dir: "{{ ansible_env.HOME }}/.vim"
     fzf_dir: "{{ ansible_env.HOME }}/.fzf"
+    pyenv_dir: "{{ ansible_env.HOME }}/.pyenv"
 
   tasks:
     - name: apply dotfiles role
@@ -48,6 +49,10 @@
     - name: Install github cli
       include_tasks: gh_cli.yml
       tags: github
+
+    - name: Install pyenv tasks
+      include_tasks: pyenv.yml
+      tags: pyenv
 
     - name: source bashrc.d in bashrc
       ansible.builtin.lineinfile:

@@ -1,0 +1,10 @@
+---
+- name: clone pyenv git repo
+  ansible.builtin.git:
+    dest: "{{ pyenv_dir }}"
+    repo: https://github.com/pyenv/pyenv.git
+    clone: yes
+    depth: 1
+    update: yes
+    version: master
+  tags: pyenv
