@@ -1,10 +1,26 @@
 ---
 - name: clone pyenv git repo
   ansible.builtin.git:
-    dest: "{{ pyenv_dir }}"
     repo: https://github.com/pyenv/pyenv.git
+    dest: "{{ pyenv_dir }}"
     clone: yes
     depth: 1
     update: yes
     version: master
+  tags: pyenv
+
+- name: clone pyenv plugin git repos
+  ansible.builtin.git:
+    repo: "https://github.com/pyenv/{{ item }}.git"
+    dest: "{{ pyenv_dir }}/plugins/{{ item }}"
+    clone: yes
+    depth: 1
+    update: yes
+    version: master
+  loop:
+    - pyenv-doctor
+    - pyenv-installer
+    - pyenv-update
+    - pyenv-virtualenv
+    - pyenv-which-ext
   tags: pyenv
