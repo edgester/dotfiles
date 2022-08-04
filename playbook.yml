@@ -87,6 +87,8 @@
           value: gpg
         - name: commit.gpgSign
           value: "true"
+        - name: pull.rebase
+          value: "true"
         - name: tag.gpgSign
           value: "true"
 
