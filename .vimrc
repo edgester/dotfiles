@@ -75,6 +75,8 @@ set tabstop=4
 set autochdir
 set nrformats+=alpha
 set showbreak=⤷
+set ignorecase
+set smartcase
 
 " enable man plugin
 :runtime! ftplugin/man.vim
