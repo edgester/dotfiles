@@ -48,6 +48,9 @@ Plug 'arcticicestudio/nord-vim', { 'branch': 'master' }
 " Git support
 Plug 'tpope/vim-fugitive'
 
+" Show register contents
+Plug 'junegunn/vim-peekaboo'
+
 " Initialize plugin system
 call plug#end()
 
