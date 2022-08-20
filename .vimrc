@@ -214,7 +214,7 @@ vnoremap <c-k> :m '<-2<CR>gv=gv
 
 
 " :Todo command lists TODO and FIXME entries
-command Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
+command! Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
 
 " Maintain undo history between sessions
 set undofile
