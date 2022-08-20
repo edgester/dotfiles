@@ -232,3 +232,6 @@ command! Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
 " Maintain undo history between sessions
 set undofile
 set undodir=~/.vim/undodir
+
+" coc settings
+let g:coc_disable_startup_warning = 1
