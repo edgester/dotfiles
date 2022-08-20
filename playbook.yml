@@ -81,7 +81,7 @@
           value: matching
         - name: gc.auto
           value: 1
-        - name: core.exludesfile
+        - name: core.excludesfile
           value: "{{ ansible_env.HOME }}/.gitignore_global"
         - name: gpg.program
           value: gpg
