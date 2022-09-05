@@ -4,7 +4,7 @@
 if [ "${PLATFORM_ID}" == "platform:el8" ]; then
 
     vagrant-libvirt(){
-        podman run -it --rm \
+        TERM=xterm-256color podman run -it --rm \
             -e LIBVIRT_DEFAULT_URI \
             -v /var/run/libvirt/:/var/run/libvirt/ \
             -v ~/.vagrant.d/boxes:/vagrant/boxes \
@@ -20,7 +20,7 @@ if [ "${PLATFORM_ID}" == "platform:el8" ]; then
     }
 
     vagrant(){
-        podman run -it --rm \
+        TERM=xterm-256color podman run -it --rm \
             -e LIBVIRT_DEFAULT_URI \
             -v /var/run/libvirt/:/var/run/libvirt/ \
             -v ~/.vagrant.d/boxes:/vagrant/boxes \
@@ -37,5 +37,8 @@ if [ "${PLATFORM_ID}" == "platform:el8" ]; then
             localhost/vagrant-extras \
             vagrant $@
     }
-
+else
+    vagrant() {
+        TERM=xterm-256color /usr/bin/vagrant "$@"
+    }
 fi
