@@ -41,6 +41,13 @@
         - "{{ vim_dir }}/bundle"
         - "{{ vim_dir }}/undodir"
 
+    - name: Create ~/modules folder
+      ansible.builtin.file:
+        path: "{{ ansible_env.HOME }}/modules"
+        state: directory
+        recurse: no
+        mode: 0700
+
     - name: Install vim-plug
       ansible.builtin.get_url:
         dest: "{{ vim_dir }}/autoload/plug.vim"
