@@ -43,7 +43,7 @@ Plug 'honza/vim-snippets'
 Plug 'preservim/tagbar'
 
 " nord-vim colorscheme
-Plug 'arcticicestudio/nord-vim', { 'branch': 'master' }
+Plug 'arcticicestudio/nord-vim'
 
 " Git support
 Plug 'tpope/vim-fugitive'
