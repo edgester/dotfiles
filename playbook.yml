@@ -8,6 +8,7 @@
     vim_dir: "{{ ansible_env.HOME }}/.vim"
     fzf_dir: "{{ ansible_env.HOME }}/.fzf"
     pyenv_dir: "{{ ansible_env.HOME }}/.pyenv"
+    spack_dir: "{{ ansible_env.HOME }}/spack"
 
   tasks:
     - name: apply dotfiles role
@@ -91,6 +92,8 @@
           value: "true"
         - name: tag.gpgSign
           value: "true"
+        - name: feature.manyFiles
+          value: "true"
 
     - name: Add git aliases
       community.general.git_config:
@@ -106,3 +109,10 @@
           value: status
         - name: tree
           value: log --graph --oneline --all
+
+    - name: Install spack
+      ansible.builtin.git:
+        repo: 'https://github.com/spack/spack.git'
+        dest: "{{ spack_dir }}"
+        version: develop
+        depth: 1
