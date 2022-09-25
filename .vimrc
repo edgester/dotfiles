@@ -203,7 +203,7 @@ let g:netrw_winsize = 25
 
 " Ultisnips config. Avoid Tab if using Valloric/YouCompleteMe or
 " nvim-lua/completion-nvim or vimwiki
-"let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<Leader><Tab>"
 "let g:UltiSnipsJumpForwardTrigger="<c-j>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
