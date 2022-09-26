@@ -212,10 +212,6 @@ let g:UltiSnipsEditSplit="vertical"
 
 
 """""""""""""""" Key mappings """""""""""""""""
-" Set leader key to space
-nnoremap <SPACE> <Nop>
-let mapleader=" "
-
 " Paste visual selection to ix.io using credentials.
 vnoremap <Leader>pp :w !curl -n -F "f:1=<-" ix.io<CR>
 
