@@ -201,6 +201,10 @@ autocmd FileType gitcommit setlocal spell spelllang=en_us
 let g:netrw_browse_split = 2
 let g:netrw_winsize = 25
 
+" Enable completion from dictionary using Ctrl-N and Ctrl-P
+set complete+=k
+set dictionary+=/usr/share/dict/american-english
+
 " Ultisnips config. Avoid Tab if using Valloric/YouCompleteMe or
 " nvim-lua/completion-nvim or vimwiki
 let g:UltiSnipsExpandTrigger="<Leader><Tab>"
