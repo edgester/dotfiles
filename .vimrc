@@ -203,13 +203,6 @@ let g:UltiSnipsEditSplit="vertical"
 " Paste visual selection to ix.io using credentials.
 vnoremap <Leader>pp :w !curl -n -F "f:1=<-" ix.io<CR>
 
-" moving lines (from https://vimtricks.com/p/vimtrick-moving-lines/ )
-"nnoremap <c-j> :m .+1<CR>==
-"nnoremap <c-k> :m .-2<CR>==
-"vnoremap <c-j> :m '>+1<CR>gv=gv
-"vnoremap <c-k> :m '<-2<CR>gv=gv
-
-
 " :Todo command lists TODO and FIXME entries
 command! Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
 
