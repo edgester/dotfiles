@@ -20,9 +20,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" ReStructured Text support
-Plug 'gu-fan/riv.vim'
-
 " FZF
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -38,9 +35,6 @@ Plug 'michal-h21/vim-zettel'
 Plug 'SirVer/ultisnips'
 " Snippets for Ultisnips
 Plug 'honza/vim-snippets'
-
-" ctags support
-Plug 'preservim/tagbar'
 
 " nord-vim colorscheme
 Plug 'arcticicestudio/nord-vim'
@@ -173,17 +167,6 @@ endfunction
 
 " vim-zettel config
 let g:zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "
-
-" Configure tagbar
-let g:tagbar_type_ansible = {
-	\ 'ctagstype' : 'ansible',
-	\ 'kinds' : [
-		\ 't:tasks'
-	\ ],
-	\ 'sort' : 0
-\ }
-nmap <F8> :TagbarToggle<CR>
-
 
 " Set 2 space indent for YAML files
 autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
