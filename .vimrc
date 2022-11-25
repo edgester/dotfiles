@@ -186,11 +186,6 @@ set dictionary+=/usr/share/dict/american-english
 
 " Ultisnips config. Avoid Tab if using Valloric/YouCompleteMe or
 " nvim-lua/completion-nvim or vimwiki
-let g:UltiSnipsExpandTrigger="<Leader><Tab>"
-let g:UltiSnipsListSnippets="<c-tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
