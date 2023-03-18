@@ -189,6 +189,11 @@ set dictionary+=/usr/share/dict/american-english
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+" Use ripgrep for :grep, if available
+if executable('rg')
+    set grepprg=rg\ --vimgrep
+    set grepformat=%f:%l:%c:%m
+endif
 
 """""""""""""""" Key mappings """""""""""""""""
 " Paste visual selection to ix.io using credentials.
