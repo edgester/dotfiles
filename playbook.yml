@@ -109,6 +109,12 @@
         dest: "{{ dotfiles_home }}/.config/regolith/i3"
         state: link
 
+    - name: Link regolith2 config to dotfiles git repo
+      ansible.builtin.file:
+        src: "{{ dotfiles_repo_local_destination }}/.config/regolith2"
+        dest: "{{ dotfiles_home }}/.config/regolith"
+        state: link
+
     - name: Set git config
       community.general.git_config:
         name: "{{ item.name }}"
